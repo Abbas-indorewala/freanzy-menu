@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 // Injecting Google Fonts and Custom Animations
 const fontStyles = `
@@ -69,8 +69,7 @@ const menuData = [
   {
     category: 'Pizza',
     id: 'pizza',
-    image:
-      'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80',
+    image: '/pizza.jpg',
     items: [
       { name: 'Margherita Pizza', price: 129 },
       { name: 'Veggie Paradise Pizza', price: 169 },
@@ -86,8 +85,7 @@ const menuData = [
   {
     category: 'Burgers',
     id: 'burgers',
-    image:
-      'https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80',
+    image: '/burger.jpg',
     items: [
       { name: 'Mini Burger', price: 49 },
       { name: 'Veg Maharaja', price: 139 },
@@ -102,8 +100,7 @@ const menuData = [
   {
     category: 'Garlic Bread',
     id: 'garlic-bread',
-    image:
-      'https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?auto=format&fit=crop&w=800&q=80',
+    image: '/garlic-bread.jpg',
     items: [
       { name: 'Cheese Garlic Bread', price: 99 },
       { name: 'Cheese Corn Bread', price: 109 },
@@ -114,8 +111,7 @@ const menuData = [
   {
     category: 'Pasta',
     id: 'pasta',
-    image:
-      'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=800&q=80',
+    image: '/pasta.jpg',
     items: [
       { name: 'Alfredo Pasta', price: 149 },
       { name: 'Arrabbiata Pasta', price: 129 },
@@ -127,8 +123,7 @@ const menuData = [
   {
     category: 'Frankies',
     id: 'frankies',
-    image:
-      'https://images.unsplash.com/photo-1626844131082-256783844137?auto=format&fit=crop&w=800&q=80',
+    image: '/franky.jpg',
     items: [
       { name: 'Cheese Potato Frankie', price: 89 },
       { name: 'Veg Paneer Frankie', price: 149 },
@@ -142,8 +137,7 @@ const menuData = [
   {
     category: 'Sandwich',
     id: 'sandwich',
-    image:
-      'https://images.unsplash.com/photo-1619096252214-ef06c45683e3?auto=format&fit=crop&w=800&q=80',
+    image: '/sandwich.jpg',
     items: [
       { name: 'Veg Sandwich', price: 79 },
       { name: 'Veg Grilled Sandwich', price: 99 },
@@ -158,8 +152,7 @@ const menuData = [
   {
     category: 'French Fries',
     id: 'french-fries',
-    image:
-      'https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=800&q=80',
+    image: '/french-fries.jpg',
     items: [
       { name: 'Regular French Fries', price: 79 },
       { name: 'Peri Peri Fries', price: 89 },
@@ -170,8 +163,7 @@ const menuData = [
   {
     category: 'Small Bites',
     id: 'small-bites',
-    image:
-      'https://images.unsplash.com/photo-1627662236973-4fd8fa823fce?auto=format&fit=crop&w=800&q=80',
+    image: '/small-bites.jpg',
     items: [
       { name: 'Mozzarella Stick', price: 199 },
       { name: 'Cheese Balls', price: 149 },
@@ -185,8 +177,7 @@ const menuData = [
   {
     category: 'Momo',
     id: 'momo',
-    image:
-      'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80',
     items: [
       { name: 'Veg Momo', price: 99 },
       { name: 'Veg Momo Fry', price: 119 },
@@ -197,8 +188,7 @@ const menuData = [
   {
     category: 'Chinese Dishes',
     id: 'chinese',
-    image:
-      'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=800&q=80',
     items: [
       { name: 'Paneer with Bell Peppers', price: 179 },
       { name: 'Honey Chilly Lotus Stem', price: 199, signature: true },
@@ -218,30 +208,28 @@ const combos = [
     title: 'The Italian Pour',
     items: 'Any Signature Pasta paired with a Glass of House Wine',
     price: 199,
-    image:
-      'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=600&q=80',
+    image: '/pasta-wine.jpg',
   },
   {
     title: 'Street Side Classic',
     items: 'Our famous Potato Frankie with a refreshing Soft Drink',
     price: 69,
-    image:
-      'https://images.unsplash.com/photo-1626200419188-f56280b62e4a?auto=format&fit=crop&w=600&q=80',
+    image: '/franky-drink.jpg',
   },
   {
     title: 'The Grand Craving',
     items: 'Gourmet Grilled Sandwich, Truffle Fries & Soft Drink',
     price: 99,
-    image:
-      'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80',
   },
 ];
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState('hero');
-  const navRef = useRef(null);
+  const navRef = useRef<any>(null); // Added <any> for TS
 
-  const scrollToCategory = (id) => {
+  // Added ': any' to id to fix TypeScript error
+  const scrollToCategory = (id: any) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -257,6 +245,7 @@ export default function App() {
             setActiveCategory(entry.target.id);
             const navItem = document.getElementById(`nav-${entry.target.id}`);
             if (navItem && navRef.current) {
+              // @ts-ignore (silences strict TS errors for inline behavior options)
               navItem.scrollIntoView({
                 behavior: 'smooth',
                 inline: 'center',
@@ -294,7 +283,7 @@ export default function App() {
           >
             {/* Image Logo Placeholder */}
             <img
-              src="https://placehold.co/400x120/transparent/F3E0B9?text=FREANZY+LOGO"
+              src="/freanzy.png"
               alt="Freanzy Logo"
               className="h-10 w-auto object-contain drop-shadow-md mb-1"
             />
@@ -340,7 +329,7 @@ export default function App() {
           >
             <div className="absolute inset-0 z-0 overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1544148103-0773bf10d330?auto=format&fit=crop&w=800&q=80"
+                src="/freanzy-land.png"
                 alt="Freanzy Ambience"
                 className="w-full h-full object-cover opacity-60 animate-scale-in"
               />
@@ -349,7 +338,7 @@ export default function App() {
             <div className="relative z-10 animate-fade-up delay-200">
               <div className="inline-block px-3 py-1 border border-[#F3E0B9]/30 rounded-full mb-4 backdrop-blur-sm">
                 <span className="font-sans text-[10px] tracking-widest uppercase text-[#F3E0B9]">
-                  Welcome to our table
+                  Explore Our Website
                 </span>
               </div>
               <h2 className="font-serif text-5xl text-[#FDFBF7] leading-tight mb-4 drop-shadow-md">
@@ -365,7 +354,8 @@ export default function App() {
 
           {/* Menu Sections */}
           <div className="px-6 space-y-16">
-            {menuData.map((category, catIdx) => (
+            {/* Removed the unused catIdx mapping parameter here */}
+            {menuData.map((category) => (
               <section
                 key={category.id}
                 id={category.id}
